@@ -8,7 +8,7 @@
 
     `timezone`은 `Asia/Seoul`이 기본값이며, `docker-node.env`에서 수정할 수 있습니다.
 
-- Built-in : vim, git, bash
+- Built-in : vim, git, bash, yarn
 
 ## Repository
 
