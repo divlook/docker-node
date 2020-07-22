@@ -69,9 +69,7 @@ version: "3"
 services:
     app:
         env_file:
-        - ./docker-node.env
-        environment:
-            - "TZ=Asia/Seoul"
+            - ./docker-node.env
         image: "divlook/node"
         container_name: "divlook-node"
         ports:
