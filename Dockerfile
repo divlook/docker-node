@@ -16,10 +16,13 @@ RUN apt-get install -y vim
 
 # .ssh 폴더 미리 생성
 RUN mkdir -m 700 /root/.ssh
+WORKDIR /root/.ssh
+COPY ./src/root/.ssh/config config
+RUN chmod 400 /root/.ssh/config
 
 # /utils/startup.sh 파일 추가
 WORKDIR /utils
-ADD ./startup.sh ./startup.sh
+COPY ./src/utils/startup.sh ./startup.sh
 RUN chmod 700 -R /utils
 
 # /app 디렉토리 생성 및 이동
