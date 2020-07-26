@@ -53,7 +53,8 @@ docker run \
     -v "$PWD:/app" \
     -v "$HOME/.ssh/id_rsa:/root/.ssh/id_rsa" \
     -w "/app" \
-    divlook/node
+    divlook/node \
+    "yarn && yarn dev"
 ```
 
 ### Docker Compose (Recommend)
@@ -81,6 +82,7 @@ services:
         working_dir: "/app"
         stdin_open: true
         tty: true
+        command: ['yarn && yarn dev']
 ```
 #### docker-compose 실행
 
