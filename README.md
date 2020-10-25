@@ -1,5 +1,8 @@
 # README
 
+![docker build](https://img.shields.io/docker/cloud/build/divlook/node.svg)
+![docker build](https://github.com/divlook/docker-node/workflows/docker%20build/badge.svg)
+
 개발 환경에서 NodeJs를 사용하기 위한 도커 이미지입니다.
 
 - NodeJs LTS : [node:lts](https://hub.docker.com/_/node)
@@ -12,15 +15,26 @@
 
 ## Repository
 
-- https://hub.docker.com/r/divlook/node
-- https://github.com/divlook/docker-node
+- Github : https://github.com/divlook/docker-node
+- Docker Hub : https://hub.docker.com/r/divlook/node
+- GitHub Packages : https://github.com/users/divlook/packages/container/package/node
 
 ## Quick Start
 
 ### Pull Image
 
+#### Docker Hub
+
+`Docker Hub` 정책이 변경되어 6개월 미사용시 저장소가 삭제될 수 있는 문제가 발생하였습니다. 이를 대비하여 `GitHub Packages`에도 동일한 이미지를 업로드하고 있습니다. 이 이미지를 장기적으로 사용하실 분은 [GitHub Packages](#GitHub-Packages)의 이미지를 `pull` 받아주세요.
+
 ```bash
-docker pull divlook/node
+docker pull divlook/node:latest
+```
+
+#### GitHub Packages
+
+```bash
+docker pull ghcr.io/divlook/node:latest
 ```
 
 ### Create Env File
