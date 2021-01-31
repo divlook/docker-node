@@ -1,7 +1,6 @@
 # README
 
-![docker build](https://img.shields.io/docker/cloud/build/divlook/node.svg)
-![docker build](https://github.com/divlook/docker-node/workflows/docker%20build/badge.svg)
+![CI](https://github.com/divlook/docker-node/workflows/CI/badge.svg)
 
 개발 환경에서 NodeJs를 사용하기 위한 도커 이미지입니다.
 
