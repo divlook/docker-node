@@ -13,6 +13,12 @@
 
 - Built-in : vim, git, bash, yarn
 
+## Supported tags
+
+- latest, v1.0.3
+
+- edge
+
 ## Repository
 
 - Github : https://github.com/divlook/docker-node
