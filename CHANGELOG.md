@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.5](https://www.github.com/divlook/docker-node/compare/v1.3.4...v1.3.5) (2021-02-01)
+
+
+### Bug Fixes
+
+* 체크아웃이 적용되지 않는 버그 수정 ([ecd20d8](https://www.github.com/divlook/docker-node/commit/ecd20d8b164086aed2b95aa12078ec5dcb842b11))
+
 ### [1.3.4](https://www.github.com/divlook/docker-node/compare/v1.3.3...v1.3.4) (2021-02-01)
 
 
