@@ -6,8 +6,6 @@ on:
   push:
     branches:
       - 'master'
-    tags:
-      - 'v*.*.*'
     paths:
       - 'Dockerfile'
       - 'docker-node.env'
@@ -16,24 +14,12 @@ on:
   pull_request:
 
 jobs:
-  release:
-    if: github.event_name != 'schedule'
+  edge:
     runs-on: ubuntu-latest
     steps:
       -
         name: Checkout
         uses: actions/checkout@v2
-      -
-        name: Docker meta
-        id: docker_meta
-        uses: crazy-max/ghaction-docker-meta@v1
-        with:
-          images: |
-            divlook/node
-            ghcr.io/divlook/node
-          tag-edge: true
-          tag-semver: |
-            v{{major}}.{{minor}}.{{patch}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -57,15 +43,15 @@ jobs:
           password: ${{ secrets.CR_PAT }}
       -
         name: Build and push
-        id: docker_build
         uses: docker/build-push-action@v2
         with:
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
+          push: github.event_name != 'pull_request'
+          tags: |
+            divlook/node:edge
+            ghcr.io/divlook/node:edge
 
   latest:
-    if: github.event_name == 'schedule'
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       -
@@ -101,7 +87,6 @@ jobs:
           password: ${{ secrets.CR_PAT }}
       -
         name: Build and push
-        id: docker_build
         uses: docker/build-push-action@v2
         with:
           push: true
