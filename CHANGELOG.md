@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.2](https://www.github.com/divlook/docker-node/compare/v1.3.1...v1.3.2) (2021-02-01)
+
+
+### Miscellaneous
+
+* changelog-types 옵션 추가 ([2592d75](https://www.github.com/divlook/docker-node/commit/2592d7546c28e2fe702a19cc2009c882edf82306))
+
 ### [1.3.1](https://www.github.com/divlook/docker-node/compare/v1.3.0...v1.3.1) (2021-02-01)
 
 
