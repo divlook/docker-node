@@ -1,0 +1,23 @@
+name: README
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'README.md'
+
+jobs:
+  docker-hub:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Update repo description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: divlook/node
