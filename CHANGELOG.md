@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.3](https://www.github.com/divlook/docker-node/compare/v1.3.2...v1.3.3) (2021-02-01)
+
+
+### Miscellaneous
+
+* release workflow 수정 ([2724a5b](https://www.github.com/divlook/docker-node/commit/2724a5b1f360e6128b320b2cc49d12ce71d89658))
+
 ### [1.3.2](https://www.github.com/divlook/docker-node/compare/v1.3.1...v1.3.2) (2021-02-01)
 
 
