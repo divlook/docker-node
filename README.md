@@ -1,5 +1,6 @@
 # README
 
+![README](https://github.com/divlook/docker-node/workflows/README/badge.svg)
 ![Docker CI](https://github.com/divlook/docker-node/workflows/Docker%20CI/badge.svg)
 
 개발 환경에서 NodeJs를 사용하기 위한 도커 이미지입니다.
