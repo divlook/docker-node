@@ -52,6 +52,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        name: Sleep for 60 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '60s'
+      -
         name: Checkout
         uses: actions/checkout@v2
         with:
