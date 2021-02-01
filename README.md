@@ -15,7 +15,7 @@
 
 ## Supported tags
 
-- latest, v1.0.3
+- latest, v1.3.5
 
 - edge
 
