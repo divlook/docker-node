@@ -2,30 +2,19 @@ name: Docker CI
 
 on:
   schedule:
-    - cron: '0 10 * * *' # everyday at 10am
+    - cron: '0 1 1 * *' # 매월 1일 10:00 (UTC 01:00)
   push:
     branches:
       - 'master'
     tags:
       - 'v*.*.*'
+    paths-ignore:
+      - 'README.md'
+      - '.github/**'
+      - '.gitignore'
   pull_request:
 
 jobs:
-  docs:
-    if: github.event_name != 'schedule'
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v2
-      -
-        name: Update repo description
-        uses: peter-evans/dockerhub-description@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: divlook/node
-
   release:
     if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
@@ -59,6 +48,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Login to GitHub Container Registry
+        if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
@@ -73,20 +63,22 @@ jobs:
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
 
-  update:
+  latest:
     if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
     steps:
       -
-        name: Get Latest Tag
-        id: tag
-        run: |
-          echo "::set-output name=latest::$(git describe --tags $(git rev-list --tags --max-count=1) || echo 'master')"
-      -
         name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: ${{ steps.tag.outputs.name }}
+          fetch-depth: 0
+      -
+        name: Get Latest Tag
+        id: tag
+        run: |
+          TAG=$(git describe --tags $(git rev-list --tags --max-count=1) || echo 'master')
+          echo "::set-output name=latest::$TAG"
+          git checkout $TAG
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -95,7 +87,6 @@ jobs:
         uses: docker/setup-buildx-action@v1
       -
         name: Login to DockerHub
-        if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -115,4 +106,6 @@ jobs:
           push: true
           tags: |
             divlook/node:latest
+            divlook/node:${{ steps.tag.outputs.latest }}
             ghcr.io/divlook/node:latest
+            ghcr.io/divlook/node:${{ steps.tag.outputs.latest }}
