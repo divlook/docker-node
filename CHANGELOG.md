@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.3.6](https://www.github.com/divlook/docker-node/compare/v1.3.5...v1.3.6) (2021-05-12)
+
+
+### Miscellaneous
+
+* **deps:** bump actions/checkout from 2 to 2.3.4 ([#13](https://www.github.com/divlook/docker-node/issues/13)) ([cdee61b](https://www.github.com/divlook/docker-node/commit/cdee61b4a136fc37da969972c809975cee4ca1a9))
+* **deps:** bump docker/build-push-action from 2 to 2.4.0 ([#14](https://www.github.com/divlook/docker-node/issues/14)) ([ff0d5d0](https://www.github.com/divlook/docker-node/commit/ff0d5d0c1cfcf3a51228bca443931d1f50ab3d9d))
+* **deps:** bump docker/login-action from 1 to 1.9.0 ([#11](https://www.github.com/divlook/docker-node/issues/11)) ([1e0207a](https://www.github.com/divlook/docker-node/commit/1e0207aa228a31204357d31a84eee225dd74d0d8))
+* **deps:** bump google-github-actions/release-please-action ([#12](https://www.github.com/divlook/docker-node/issues/12)) ([e33cdbb](https://www.github.com/divlook/docker-node/commit/e33cdbbcc74e9cf772d6ddfe7b65f21c8b02a24e))
+* **deps:** bump peter-evans/dockerhub-description from 2 to 2.4.2 ([#15](https://www.github.com/divlook/docker-node/issues/15)) ([95688da](https://www.github.com/divlook/docker-node/commit/95688da4514c0ebba037eb39aa20a176b71c4754))
+
 ### [1.3.5](https://www.github.com/divlook/docker-node/compare/v1.3.4...v1.3.5) (2021-02-01)
 
 
