@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.8](https://www.github.com/divlook/docker-node/compare/v1.3.7...v1.3.8) (2021-08-06)
+
+
+### Miscellaneous
+
+* **deps:** bump docker/build-push-action from 2.4.0 to 2.6.1 ([#25](https://www.github.com/divlook/docker-node/issues/25)) ([6fc349a](https://www.github.com/divlook/docker-node/commit/6fc349a853c354b5f715dfce705e96a6c972c666))
+
 ### [1.3.7](https://www.github.com/divlook/docker-node/compare/v1.3.6...v1.3.7) (2021-08-06)
 
 
