@@ -42,7 +42,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2.4.0
         with:
-          push: github.event_name != 'pull_request'
+          push: ${{ github.event_name != 'pull_request' }}
           tags: |
             divlook/node:edge
             ghcr.io/divlook/node:edge
