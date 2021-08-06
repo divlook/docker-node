@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.3.7](https://www.github.com/divlook/docker-node/compare/v1.3.6...v1.3.7) (2021-08-06)
+
+
+### Miscellaneous
+
+* **deps:** bump docker/login-action from 1.9.0 to 1.10.0 ([#19](https://www.github.com/divlook/docker-node/issues/19)) ([21b97ed](https://www.github.com/divlook/docker-node/commit/21b97edc511da1907110856f9e63317b78e9eee6))
+* **deps:** bump google-github-actions/release-please-action ([#24](https://www.github.com/divlook/docker-node/issues/24)) ([fb118d9](https://www.github.com/divlook/docker-node/commit/fb118d9e1244d5f1b2a37cc1b81f55d39b2e7904))
+* **deps:** bump peter-evans/dockerhub-description from 2.4.2 to 2.4.3 ([#18](https://www.github.com/divlook/docker-node/issues/18)) ([6397f81](https://www.github.com/divlook/docker-node/commit/6397f81a8229690ea0686491636b776d82b633a1))
+
 ### [1.3.6](https://www.github.com/divlook/docker-node/compare/v1.3.5...v1.3.6) (2021-05-12)
 
 
