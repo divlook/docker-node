@@ -58,7 +58,7 @@ jobs:
           time: '60s'
       -
         name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2.3.5
         with:
           fetch-depth: 0
       -
